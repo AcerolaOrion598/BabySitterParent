@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.KidFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/kid_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/kid_info_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/kid_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:id="@+id/kid_name_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_photo">
+
+                    <TextView
+                        android:id="@+id/kid_name_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/name_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_name_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kid_patronymic_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_name_container">
+
+                    <TextView
+                        android:id="@+id/kid_patronymic_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/patronymic_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_patronymic_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kid_surname_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_patronymic_container">
+
+                    <TextView
+                        android:id="@+id/kid_surname_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/surname_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_surname_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kid_age_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_surname_container">
+
+                    <TextView
+                        android:id="@+id/kid_age_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/kid_age_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_age_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kid_locker_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_age_container">
+
+                    <TextView
+                        android:id="@+id/kid_locker_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/kid_locker_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_locker_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kid_blood_type_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_locker_container">
+
+                    <TextView
+                        android:id="@+id/kid_blood_type_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/kid_blood_type_title_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/kid_blood_type_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/event_open_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thin_top_border"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kid_blood_type_container">
+
+                    <TextView
+                        android:id="@+id/event_open_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="@string/event_open_tv_text"
+                        android:textColor="@color/colorBlack30"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/event_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTinyGrey"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/event_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:id="@+id/event_date_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/event_date_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/event_date_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/event_date_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/info_row_vertical_margin"
+                        android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="end"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/schedule_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thick_top_border"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingTop="@dimen/thick_top_border_thickness"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/event_date_container">
+
+                    <TextView
+                        android:id="@+id/schedule_container_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/schedule_container_tv_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/schedule_arrive_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/schedule_container_tv">
+
+                        <TextView
+                            android:id="@+id/schedule_arrive_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/schedule_arrive_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/schedule_arrive_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="10:00"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schedule_leave_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/thin_top_border"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/schedule_arrive_container">
+
+                        <TextView
+                            android:id="@+id/schedule_leave_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/schedule_leave"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/schedule_leave_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="18:00"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/eating_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thick_top_border"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingTop="@dimen/thick_top_border_thickness"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/schedule_container">
+
+                    <TextView
+                        android:id="@+id/eating_container_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/eating_container_tv_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/eating_event_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/eating_container_tv">
+
+                        <TextView
+                            android:id="@+id/eating_event_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/eating_event_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eating_event_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="Завтрак"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/eating_food_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/thin_top_border"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/eating_event_container">
+
+                        <TextView
+                            android:id="@+id/eating_food_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/eating_food_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eating_food_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="Солянка"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/eating_denial_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/thin_top_border"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/eating_food_container">
+
+                        <TextView
+                            android:id="@+id/eating_denial_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/eating_denial_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eating_denial_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="Солянка"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sleeping_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thick_top_border"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingTop="@dimen/thick_top_border_thickness"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/eating_container">
+
+                    <TextView
+                        android:id="@+id/sleeping_container_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/sleeping_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/sleep_start_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sleeping_container_tv">
+
+                        <TextView
+                            android:id="@+id/sleep_start_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/sleep_start_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/sleep_start_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="15:00"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sleep_end_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/thin_top_border"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sleep_start_container">
+
+                        <TextView
+                            android:id="@+id/sleep_end_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/sleep_end_text"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/sleep_end_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/info_row_vertical_margin"
+                            android:layout_marginBottom="@dimen/info_row_vertical_margin"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:text="16:00"
+                            android:textColor="@color/colorBlack87"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/other_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/thick_top_border"
+                    android:paddingStart="@dimen/screen_horizontal_padding"
+                    android:paddingTop="@dimen/thick_top_border_thickness"
+                    android:paddingEnd="@dimen/screen_horizontal_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sleeping_container">
+
+                    <TextView
+                        android:id="@+id/other_container_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/other_text"
+                        android:textColor="@color/colorBlack87"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/other_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quibusdam tempore in, beatae omnis saepe velit veniam aliquam perspiciatis enim eos esse quasi nobis id atque quisquam sequi pariatur sapiente magnam, delectus expedita, quo deleniti culpa sed distinctio. Cupiditate hic asperiores totam sed similique, perferendis nostrum. Molestias, optio obcaecati soluta!"
+                        android:textColor="@color/colorBlack60"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/other_container_tv"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="20dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
