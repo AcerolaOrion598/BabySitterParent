@@ -2,62 +2,71 @@ package com.djaphar.babysitterparent.SupportClasses.ApiClasses;
 
 public class Parent {
 
-    private String name, patronymic, surname, role, phoneNum, photoUrl;
+    private String parent_id, relation_degree, phone, photo_link, name, surname, patronymic;
 
-    public Parent(String name, String patronymic, String surname, String role, String phoneNum, String photoUrl) {
+    public Parent(String parent_id, String relation_degree, String phone, String photo_link, String name, String surname, String patronymic) {
+        this.parent_id = parent_id;
+        this.relation_degree = relation_degree;
+        this.phone = phone;
+        this.photo_link = photo_link;
         this.name = name;
-        this.patronymic = patronymic;
         this.surname = surname;
-        this.role = role;
-        this.phoneNum = phoneNum;
-        this.photoUrl = photoUrl;
+        this.patronymic = patronymic;
+    }
+
+    public String getParentId() {
+        return parent_id;
+    }
+
+    public String getRelationDegree() {
+        return relation_degree;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getPhotoLink() {
+        return photo_link;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getPatronymic() {
-        return patronymic;
-    }
-
     public String getSurname() {
         return surname;
     }
 
-    public String getRole() {
-        return role;
+    public String getPatronymic() {
+        return patronymic;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public void setParentId(String parent_id) {
+        this.parent_id = parent_id;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public void setRelationDegree(String relation_degree) {
+        this.relation_degree = relation_degree;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setPhotoLink(String photo_link) {
+        this.photo_link = photo_link;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 }

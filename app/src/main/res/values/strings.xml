@@ -57,4 +57,19 @@
     <string name="new_kid_title">Новый Ребёнок</string>
     <string name="some_field_is_null">Не указано</string>
     <string name="event_open_tv_text">Показать события</string>
+    <string name="login_title">Вход</string>
+    <string name="register_title">Регистрация</string>
+    <string name="login_text">Логин</string>
+    <string name="password_text">Пароль</string>
+    <string name="login_btn_text">Войти</string>
+    <string name="password_repeat_text">Подтвердите пароль</string>
+    <string name="login_nav_tv_text">У меня уже есть аккаунт</string>
+    <string name="register_btn_text">Зарегистрироваться</string>
+    <string name="empty_input">Вы не указали значение!</string>
+    <string name="auth_header_key">Authorization</string>
+    <string name="no_picture_url">http://82.148.31.234:8000/photos/placeholder.jpg</string>
+    <string name="parent_profile">parent</string>
+    <string name="picture_update_success">Фотография успешно обновлена!</string>
+    <string name="delete_picture_title">Удалить Фотографию</string>
+    <string name="delete_picture_message">Вы действительно хотите удалить эту фотографию?</string>
 </resources>

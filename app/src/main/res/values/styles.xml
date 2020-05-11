@@ -12,4 +12,7 @@
         <item name="height">60dp</item>
         <item name="background">@color/colorAccent</item>
     </style>
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
 </resources>

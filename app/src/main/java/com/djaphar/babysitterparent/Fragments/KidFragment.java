@@ -51,7 +51,7 @@ public class KidFragment extends MyFragment {
         mainActivity = (MainActivity) getActivity();
         if (mainActivity != null) {
             setActionBarTitle(getString(R.string.title_kid));
-            setBackBtnState(false);
+            setBackBtnState(View.GONE);
         }
         return root;
     }
@@ -76,7 +76,7 @@ public class KidFragment extends MyFragment {
 
     public void backWasPressed() {
         setActionBarTitle(getString(R.string.title_kid));
-        setBackBtnState(false);
+        setBackBtnState(View.GONE);
         kidInfoContainer.setVisibility(View.VISIBLE);
         ViewDriver.hideView(eventContainer, R.anim.hide_right_animation, context);
     }
@@ -85,8 +85,8 @@ public class KidFragment extends MyFragment {
         mainActivity.setActionBarTitle(title);
     }
 
-    private void setBackBtnState(boolean visible) {
-        mainActivity.setBackBtnState(visible);
+    private void setBackBtnState(int visibilityState) {
+        mainActivity.setBackBtnState(visibilityState);
     }
 
     private void setKidInfo() {
@@ -136,7 +136,7 @@ public class KidFragment extends MyFragment {
 
     private void showEvent() {
         setActionBarTitle(getString(R.string.events));
-        setBackBtnState(true);
+        setBackBtnState(View.VISIBLE);
         ViewDriver.showView(eventContainer, R.anim.show_right_animation, context).setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationEnd(Animation animation) {

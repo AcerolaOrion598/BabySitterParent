@@ -4,4 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.SettingsFragment"/>
+    tools:context=".Fragments.SettingsFragment"
+    android:paddingStart="@dimen/screen_horizontal_padding"
+    android:paddingEnd="@dimen/screen_horizontal_padding"
+    android:paddingTop="31dp">
+
+    <TextView
+        android:id="@+id/logout_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/logout_text"
+        android:textColor="@color/colorBlue87"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

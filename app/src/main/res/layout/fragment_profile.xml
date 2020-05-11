@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ProfileFragment">
 
     <ScrollView
         android:id="@+id/parent_info_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,11 +31,66 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
 
+            <ImageButton
+                android:id="@+id/delete_picture_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_red_button"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:tint="@color/colorWhite"
+                android:translationY="-30dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/select_picture_btn"
+                app:layout_constraintTop_toBottomOf="@id/parent_photo"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/cancel_picture_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_grey_button"
+                android:src="@drawable/ic_close_black_24dp"
+                android:tint="@color/colorWhite"
+                android:translationY="-30dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/save_picture_btn"
+                app:layout_constraintTop_toBottomOf="@+id/parent_photo"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/select_picture_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/ic_create_black_24dp"
+                android:tint="@color/colorWhite"
+                android:translationY="-30dp"
+                app:layout_constraintEnd_toEndOf="@id/parent_photo"
+                app:layout_constraintTop_toBottomOf="@id/parent_photo"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/save_picture_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/ic_check_black_24dp"
+                android:tint="@color/colorWhite"
+                android:translationY="-30dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parent_photo"
+                tools:ignore="ContentDescription" />
+
             <LinearLayout
                 android:id="@+id/parent_name_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/thin_top_border"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/screen_horizontal_padding"
                 android:paddingEnd="@dimen/screen_horizontal_padding"

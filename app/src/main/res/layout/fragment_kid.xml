@@ -291,7 +291,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/kid_blood_type_container">
 
                     <TextView
-                        android:id="@+id/event_open_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
