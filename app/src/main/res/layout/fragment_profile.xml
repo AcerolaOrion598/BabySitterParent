@@ -247,46 +247,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/parent_kid_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/thin_top_border"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/screen_horizontal_padding"
-                android:paddingEnd="@dimen/screen_horizontal_padding"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/parent_role_container">
-
-                <TextView
-                    android:id="@+id/parent_kid_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="@dimen/info_row_vertical_margin"
-                    android:layout_marginBottom="@dimen/info_row_vertical_margin"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/parent_kid_title_text"
-                    android:textColor="@color/colorBlack87"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/parent_kid_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="@dimen/info_row_vertical_margin"
-                    android:layout_marginBottom="@dimen/info_row_vertical_margin"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_medium"
-                    android:gravity="end"
-                    android:textColor="@color/colorBlack87"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/parent_phone_num_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -296,7 +256,7 @@
                 android:paddingEnd="@dimen/screen_horizontal_padding"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/parent_kid_container">
+                app:layout_constraintTop_toBottomOf="@+id/parent_role_container">
 
                 <TextView
                     android:id="@+id/parent_phone_num_title"

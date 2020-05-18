@@ -3,14 +3,15 @@ package com.djaphar.babysitterparent.ViewModels;
 import android.app.Application;
 import android.widget.Toast;
 
-import com.djaphar.babysitterparent.R;
 import com.djaphar.babysitterparent.SupportClasses.ApiClasses.ApiBuilder;
+import com.djaphar.babysitterparent.SupportClasses.ApiClasses.Child;
+import com.djaphar.babysitterparent.SupportClasses.ApiClasses.Event;
 import com.djaphar.babysitterparent.SupportClasses.ApiClasses.MainApi;
 import com.djaphar.babysitterparent.SupportClasses.ApiClasses.Parent;
-import com.djaphar.babysitterparent.SupportClasses.ApiClasses.UpdatePictureModel;
 import com.djaphar.babysitterparent.SupportClasses.LocalDataClasses.LocalDataRoom;
 import com.djaphar.babysitterparent.SupportClasses.LocalDataClasses.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import androidx.annotation.NonNull;
@@ -21,13 +22,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProfileViewModel extends AndroidViewModel {
+public class ChildViewModel extends AndroidViewModel {
 
     private LiveData<User> userLiveData;
     private MutableLiveData<Parent> parentMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<Child> childMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<Event> eventMutableLiveData = new MutableLiveData<>();
     private MainApi mainApi;
 
-    public ProfileViewModel(@NonNull Application application) {
+    public ChildViewModel(@NonNull Application application) {
         super(application);
         userLiveData = LocalDataRoom.getDatabase(application).localDataDao().getUser();
         mainApi = ApiBuilder.getMainApi();
@@ -39,6 +42,14 @@ public class ProfileViewModel extends AndroidViewModel {
 
     public MutableLiveData<Parent> getParent() {
         return parentMutableLiveData;
+    }
+
+    public MutableLiveData<Child> getChild() {
+        return childMutableLiveData;
+    }
+
+    public MutableLiveData<Event> getEvent() {
+        return eventMutableLiveData;
     }
 
     public void requestProfile(HashMap<String, String> headersMap) {
@@ -77,49 +88,46 @@ public class ProfileViewModel extends AndroidViewModel {
         });
     }
 
-    public void requestUpdatePicture(HashMap<String, String> headersMap, UpdatePictureModel updatePictureModel) {
-        mainApi.requestUpdatePicture(headersMap, updatePictureModel).enqueue(new Callback<Void>() {
+    public void requestMyChild(HashMap<String, String> headersMap) {
+        mainApi.requestMyChild(headersMap).enqueue(new Callback<Child>() {
             @Override
-            public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+            public void onResponse(@NonNull Call<Child> call, @NonNull Response<Child> response) {
                 if (!response.isSuccessful()) {
+                    if (response.code() == 404) {
+                        childMutableLiveData.setValue(null);
+                        return;
+                    }
                     Toast.makeText(getApplication(), response.message(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(getApplication(), R.string.picture_update_success, Toast.LENGTH_SHORT).show();
-                requestProfile(headersMap);
+                childMutableLiveData.setValue(response.body());
             }
 
             @Override
-            public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Child> call, @NonNull Throwable t) {
                 Toast.makeText(getApplication(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void requestDeletePicture(HashMap<String, String> headersMap, UpdatePictureModel updatePictureModel) {
-        mainApi.requestDeletePicture(headersMap, updatePictureModel).enqueue(new Callback<Parent>() {
+    public void requestEvent(HashMap<String, String> headersMap, String childId, String date) {
+        mainApi.requestEvent(headersMap, childId, date).enqueue(new Callback<Event>() {
             @Override
-            public void onResponse(@NonNull Call<Parent> call, @NonNull Response<Parent> response) {
+            public void onResponse(@NonNull Call<Event> call, @NonNull Response<Event> response) {
                 if (!response.isSuccessful()) {
+                    if (response.code() == 404) {
+                        eventMutableLiveData.setValue(new Event(childId, date, null,
+                                null, null, null, null, new ArrayList<>()));
+                        return;
+                    }
                     Toast.makeText(getApplication(), response.message(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                Parent currentParent = parentMutableLiveData.getValue();
-                if (currentParent == null) {
-                    return;
-                }
-
-                Parent responseParent = response.body();
-                if (responseParent == null) {
-                    return;
-                }
-                currentParent.setPhotoLink(responseParent.getPhotoLink());
-                parentMutableLiveData.setValue(currentParent);
+                eventMutableLiveData.setValue(response.body());
             }
 
             @Override
-            public void onFailure(@NonNull Call<Parent> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Event> call, @NonNull Throwable t) {
                 Toast.makeText(getApplication(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">BabySitterParent</string>
     <string name="title_kid">Ваш Ребёнок</string>
+    <string name="title_billing">Счета</string>
     <string name="title_profile">Ваш Профиль</string>
     <string name="title_settings">Настройки</string>
-    <string name="kid">Ребёнок</string>
+    <string name="child">Ребёнок</string>
     <string name="profile">Профиль</string>
     <string name="bill_text">Счёт #</string>
     <string name="events">События</string>
@@ -24,8 +25,7 @@
     <string name="bill_theme_title_text">Категория</string>
     <string name="bill_price_title_text">Сумма, руб.</string>
     <string name="bill_target_title_text">Ребёнок</string>
-    <string name="bill_description_title">Введите комментарий</string>
-    <string name="comment_ed_hint">Комментарий</string>
+    <string name="bill_description_title">Комментарий</string>
     <string name="save_btn_text">Сохранить</string>
     <string name="delete_btn_text">Удалить</string>
     <string name="bill_status_title_text">Статус</string>
@@ -72,4 +72,11 @@
     <string name="picture_update_success">Фотография успешно обновлена!</string>
     <string name="delete_picture_title">Удалить Фотографию</string>
     <string name="delete_picture_message">Вы действительно хотите удалить эту фотографию?</string>
+    <string name="kid_add_instruction">Введите пригласительный номер, чтобы добавить своего ребёнка. Для получения номера обратитесь к воспитателю.</string>
+    <string name="kid_add_ed_text">Пригласительный номер</string>
+    <string name="kid_add_btn_text">Добавить ребёнка</string>
+    <string name="breakfast">Завтрак</string>
+    <string name="lunch">Обед</string>
+    <string name="snack">Полдник</string>
+    <string name="bill_container_title">Ваш Счёт</string>
 </resources>

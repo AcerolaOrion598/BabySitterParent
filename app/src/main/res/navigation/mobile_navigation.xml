@@ -7,9 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_kid"
-        android:name="com.djaphar.babysitterparent.Fragments.KidFragment"
+        android:name="com.djaphar.babysitterparent.Fragments.ChildFragment"
         android:label="@string/title_kid"
-        tools:layout="@layout/fragment_kid" />
+        tools:layout="@layout/fragment_child" />
+
+    <fragment
+        android:id="@+id/navigation_billing"
+        android:name="com.djaphar.babysitterparent.Fragments.BillingFragment"
+        android:label="@string/title_billing"
+        tools:layout="@layout/fragment_billing" />
 
     <fragment
         android:id="@+id/navigation_profile"

@@ -4,7 +4,12 @@
     <item
         android:id="@+id/navigation_kid"
         android:icon="@drawable/ic_mood_black_24dp"
-        android:title="@string/kid" />
+        android:title="@string/child" />
+
+    <item
+        android:id="@+id/navigation_billing"
+        android:icon="@drawable/ic_attach_money_black_24dp"
+        android:title="@string/title_billing" />
 
     <item
         android:id="@+id/navigation_profile"

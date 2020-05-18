@@ -4,13 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.KidFragment">
+    tools:context=".Fragments.ChildFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/kid_add_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/kid_add_instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/screen_horizontal_padding"
+            android:paddingEnd="@dimen/screen_horizontal_padding"
+            android:text="@string/kid_add_instruction"
+            android:textColor="@color/colorBlack30"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/kid_add_ed"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="@dimen/screen_horizontal_padding"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/screen_horizontal_padding"
+            android:background="@drawable/edit_text_w_stroke"
+            android:fontFamily="@font/roboto"
+            android:gravity="top"
+            android:hint="@string/kid_add_ed_text"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorBlack87"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/kid_add_instruction" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/kid_add_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_button"
+            android:enabled="false"
+            android:fontFamily="@font/roboto"
+            android:text="@string/kid_add_btn_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/kid_info_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -431,7 +493,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="10:00"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -470,7 +531,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="18:00"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -535,7 +595,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="Завтрак"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -574,7 +633,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="Солянка"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -613,7 +671,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="Солянка"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -678,7 +735,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="15:00"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -717,7 +773,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="end"
-                            android:text="16:00"
                             android:textColor="@color/colorBlack87"
                             android:textSize="18sp" />
 
@@ -754,14 +809,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quibusdam tempore in, beatae omnis saepe velit veniam aliquam perspiciatis enim eos esse quasi nobis id atque quisquam sequi pariatur sapiente magnam, delectus expedita, quo deleniti culpa sed distinctio. Cupiditate hic asperiores totam sed similique, perferendis nostrum. Molestias, optio obcaecati soluta!"
                         android:textColor="@color/colorBlack60"
                         android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/other_container_tv"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="20dp"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/other_container_tv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

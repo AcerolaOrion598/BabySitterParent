@@ -3,7 +3,6 @@ package com.djaphar.babysitterparent.SupportClasses.OtherClasses;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -53,13 +52,4 @@ public class ViewDriver {
         tv.setText(status);
     }
 
-    public static void toggleChildViewsEnable(View view, boolean enabled) {
-        view.setEnabled(enabled);
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                toggleChildViewsEnable(viewGroup.getChildAt(i), enabled);
-            }
-        }
-    }
 }

@@ -2,9 +2,9 @@ package com.djaphar.babysitterparent.SupportClasses.ApiClasses;
 
 public class Parent {
 
-    private String parent_id, relation_degree, phone, photo_link, name, surname, patronymic;
+    private String parent_id, relation_degree, phone, photo_link, name, surname, patronymic, child_id;
 
-    public Parent(String parent_id, String relation_degree, String phone, String photo_link, String name, String surname, String patronymic) {
+    public Parent(String parent_id, String relation_degree, String phone, String photo_link, String name, String surname, String patronymic, String child_id) {
         this.parent_id = parent_id;
         this.relation_degree = relation_degree;
         this.phone = phone;
@@ -12,6 +12,7 @@ public class Parent {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
+        this.child_id = child_id;
     }
 
     public String getParentId() {
@@ -42,6 +43,10 @@ public class Parent {
         return patronymic;
     }
 
+    public String getChildId() {
+        return child_id;
+    }
+
     public void setParentId(String parent_id) {
         this.parent_id = parent_id;
     }
@@ -68,5 +73,9 @@ public class Parent {
 
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
+    }
+
+    public void setChildId(String child_id) {
+        this.child_id = child_id;
     }
 }

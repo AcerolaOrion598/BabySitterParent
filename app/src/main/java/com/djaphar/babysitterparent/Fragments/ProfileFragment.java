@@ -18,8 +18,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
 import com.djaphar.babysitterparent.Activities.MainActivity;
 import com.djaphar.babysitterparent.R;
 import com.djaphar.babysitterparent.SupportClasses.Adapters.MainDialog;
@@ -44,8 +42,8 @@ public class ProfileFragment extends MyFragment {
     private Context context;
     private ImageView parentPhoto;
     private ScrollView parentInfoSv;
-    private LinearLayout parentNameContainer, parentPatronymicContainer, parentSurnameContainer, parentRoleContainer, parentKidContainer, parentPhoneNumContainer;
-    private TextView parentNameContent, parentPatronymicContent, parentSurnameContent, parentRoleContent, parentKidContent, parentPhoneNumContent;
+    private LinearLayout parentNameContainer, parentPatronymicContainer, parentSurnameContainer, parentRoleContainer, parentPhoneNumContainer;
+    private TextView parentNameContent, parentPatronymicContent, parentSurnameContent, parentRoleContent, parentPhoneNumContent;
     private ImageButton selectPictureBtn, deletePictureBtn, cancelPictureBtn, savePictureBtn;
     private Parent parent;
     private HashMap<String, String> authHeader = new HashMap<>();
@@ -59,13 +57,11 @@ public class ProfileFragment extends MyFragment {
         parentPatronymicContainer = root.findViewById(R.id.parent_patronymic_container);
         parentSurnameContainer = root.findViewById(R.id.parent_surname_container);
         parentRoleContainer = root.findViewById(R.id.parent_role_container);
-        parentKidContainer = root.findViewById(R.id.parent_kid_container);
         parentPhoneNumContainer = root.findViewById(R.id.parent_phone_num_container);
         parentNameContent = root.findViewById(R.id.parent_name_content);
         parentPatronymicContent = root.findViewById(R.id.parent_patronymic_content);
         parentSurnameContent = root.findViewById(R.id.parent_surname_content);
         parentRoleContent = root.findViewById(R.id.parent_role_content);
-        parentKidContent = root.findViewById(R.id.parent_kid_content);
         parentPhoneNumContent = root.findViewById(R.id.parent_phone_num_content);
         selectPictureBtn = root.findViewById(R.id.select_picture_btn);
         deletePictureBtn = root.findViewById(R.id.delete_picture_btn);
@@ -108,7 +104,7 @@ public class ProfileFragment extends MyFragment {
                 .show(getParentFragmentManager(), "dialog"));
         parentRoleContainer.setOnClickListener(lView -> new MainDialog(getString(R.string.parent_role_title_text), parent.getRelationDegree(), lView)
                 .show(getParentFragmentManager(), "dialog"));
-//        parentKidContainer.setOnClickListener(lView -> new MainDialog(getString(R.string.kid), parent.getPhoneNum(), lView)
+//        parentKidContainer.setOnClickListener(lView -> new MainDialog(getString(R.string.child), parent.getPhoneNum(), lView)
 //                .show(getParentFragmentManager(), "dialog"));
         parentPhoneNumContainer.setOnClickListener(lView -> new MainDialog(getString(R.string.parent_phone_num_title_text), parent.getPhone(), lView)
                 .show(getParentFragmentManager(), "dialog"));
@@ -202,7 +198,7 @@ public class ProfileFragment extends MyFragment {
                 parent.setPhone(fieldValue);
                 break;
         }
-        profileViewModel.requestUpdateParent(authHeader, parent);
+        profileViewModel.requestUpdateProfile(authHeader, parent);
     }
 
     private void setActionBarTitle(String title) {
@@ -223,12 +219,7 @@ public class ProfileFragment extends MyFragment {
 
     private void setParentInfo() {
         parentInfoSv.setVisibility(View.VISIBLE);
-        Glide.with(context)
-                .applyDefaultRequestOptions(new RequestOptions()
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true))
-                .load(parent.getPhotoLink())
-                .into(parentPhoto);
+        Glide.with(context).load(parent.getPhotoLink()).into(parentPhoto);
         String name = parent.getName();
         if (name == null || name.equals("")) {
             name = getString(R.string.some_field_is_null);
