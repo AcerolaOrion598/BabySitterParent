@@ -45,4 +45,7 @@ public interface MainApi {
 
     @GET("bill/")
     Call<ArrayList<Bill>> requestMyBills(@HeaderMap Map<String, String> headers);
+
+    @GET("gallery/")
+    Call<ArrayList<GalleryPicture>> requestMyGallery(@HeaderMap Map<String, String> headers);
 }

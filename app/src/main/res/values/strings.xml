@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BabySitterParent</string>
+    <string name="app_name">MyChildParent</string>
     <string name="title_kid">Ваш Ребёнок</string>
     <string name="title_billing">Счета</string>
     <string name="title_profile">Ваш Профиль</string>
@@ -79,4 +79,6 @@
     <string name="lunch">Обед</string>
     <string name="snack">Полдник</string>
     <string name="bill_container_title">Ваш Счёт</string>
+    <string name="title_gallery">Галерея</string>
+    <string name="null_description">Нет описания</string>
 </resources>

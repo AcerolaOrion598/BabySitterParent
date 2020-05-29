@@ -42,13 +42,12 @@ public class BillingRecyclerViewAdapter extends RecyclerView.Adapter<BillingRecy
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Bill bill = bills.get(position);
         holder.billingListThemeTv.setText(bill.getTheme());
-//        holder.billingListTargetTv.setText("");
         float price = bill.getSum();
         String priceStr;
         if (price == (int) price) {
             priceStr = (int) price + "р.";
         } else {
-            priceStr = String.format(Locale.US, "%.2f", price) + "р";
+            priceStr = String.format(Locale.US, "%.2f", price) + "р.";
         }
         holder.billingListPriceTv.setText(priceStr);
         ViewDriver.setStatusTvOptions(holder.billingListStatusTv, billingFragment.getResources(), bill.getStatus());
